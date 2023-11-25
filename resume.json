@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ivan Aitjanov",
+    "label": "Rust Developer",
+    "image": "./resources/avatar.jpg",
+    "email": "aitvann@gmail.com",
+    "phone": "+79516598310",
+    "url": "",
+    "summary": "Hi ! I am an experienced Rust developer and have professional C++ experience. I use Clojure for personal projects and like functional programming in general",
+    "location": {
+      "countryCode": "RU",
+      "city": "St Petersburg"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "aitvann",
+        "url": "https://www.linkedin.com/in/aitvann/"
+      },
+      {
+        "network": "Telegram",
+        "username": "aitvann",
+        "url": "https://t.me/aitvann"
+      },
+      {
+        "network": "GitHub",
+        "username": "aitvann",
+        "url": "https://github.com/aitvann"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tradetech",
+      "position": "Software Engineer",
+      "startDate": "2021-10-31",
+      "endDate": "2023-10-31",
+      "highlights": ["Rust", "Clickhouse", "Solana"],
+      "url": "https://www.linkedin.com/company/85363151",
+      "location": "St Petersburg City, Russia"
+    },
+    {
+      "name": "Wargaming",
+      "position": "Software Engineer",
+      "startDate": "2021-05-31",
+      "endDate": "2021-08-31",
+      "highlights": ["C++"],
+      "url": "https://www.linkedin.com/company/127309",
+      "location": "St Petersburg City, Russia"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    { "name": "Rust", "keywords": ["Tokio", "Hyper", "Actix Web", "SqlX"] },
+    { "name": "C++", "keywords": ["C++ 17", "STL"] },
+    {
+      "name": "Backend Development",
+      "keywords": ["PostgreSQL", "Clickhouse", "Apache Kafka"]
+    },
+    {
+      "name": "Ops",
+      "keywords": ["Linux", "HashiCorp Consul", "Nix (OS, PM, DSL)"]
+    },
+    {
+      "name": "FinTech",
+      "keywords": []
+    },
+    {
+      "name": "Blockchain",
+      "keywords": ["Solana"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Russian",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+    "interests": [ {"name": "Open Source"}
+    ],
+  "references": [],
+  "projects": [
+    {
+      "name": "Smart Poselok",
+      "startDate": "2022-04-30",
+      "description": "Management system of suburban settlements",
+      "endDate": "2022-06-30"
+    },
+    {
+      "name": "Visual DB",
+      "description": "PostgreSQL database GUI viewer"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}
