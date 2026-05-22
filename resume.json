@@ -6,7 +6,6 @@
     "image": "./resources/avatar.jpg",
     "email": "aitvann@gmail.com",
     "phone": "+79516598310",
-    "url": "",
     "summary": "Hi ! I am an experienced Rust developer and have professional C++ experience. I use Clojure for personal projects and like functional programming in general",
     "location": {
       "countryCode": "RU",
