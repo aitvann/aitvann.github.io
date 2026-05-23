@@ -58,6 +58,19 @@
           builderDerivation = self.packages.${system}.builder;
         });
       };
+
+      devShells.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          # Editor tools
+          efm-langserver
+          prettier
+          pandoc
+          markdownlint-cli2
+
+          nixd
+          alejandra
+        ];
+      };
     })
     // {inherit inputs;};
 }
