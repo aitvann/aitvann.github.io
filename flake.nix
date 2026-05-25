@@ -40,7 +40,7 @@
           mkdir $out
           cp -v resume.html $out/index.html
           # Copy other resources such as images here...
-          cp -rv resources $out/resources
+          cp -rv ${./resources} $out/resources
         '';
       };
 
