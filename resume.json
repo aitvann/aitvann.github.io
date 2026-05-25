@@ -7,7 +7,8 @@
     "label": "Rust Developer",
     "location": {
       "city": "St Petersburg",
-      "countryCode": "RU"
+      "countryCode": "RU",
+      "region": ""
     },
     "name": "Ivan Aitzhanov",
     "phone": "+7 (951) 659 83 10",
@@ -34,9 +35,9 @@
   "education": [
     {
       "area": "Information Technology",
-      "endDate": "2022",
+      "endDate": "2022-05-01",
       "institution": "Институт среднего профессионального образования СПбПУ",
-      "startDate": "2018",
+      "startDate": "2018-09-01",
       "studyType": "Bachelor",
       "url": "https://college.spbstu.ru/"
     }
@@ -58,6 +59,7 @@
   ],
   "meta": {
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
+    "language": "en",
     "version": "v1.0.0"
   },
   "projects": [
@@ -121,10 +123,10 @@
     {
       "endDate": "2025-04",
       "highlights": [
-        "Async Rust. Designed and built a scalable, distributed traffic limiting system\n        to enforce monthly and daily usage limits based on client subscription plans.\n        Utilizing PostgreSQL.",
-        "Async Rust. Implemented an extensive integration with Paddle and Stripe payment gateways:\n        individual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,\n        Sqlx and PostgreSQL.",
-        "Rust. Developed a Solana blockchain slippage estimation service,\n        analyzing on-chain events from Pump.fun, Raydium, and other platforms.\n        Utilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.",
-        "Mentored a junior engineer."
+        "Async Rust. Designed and built a scalable, distributed traffic limiting system\nto enforce monthly and daily usage limits based on client subscription plans.\nUtilizing PostgreSQL.\n",
+        "Async Rust. Implemented an extensive integration with Paddle and Stripe payment gateways:\nindividual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,\nSqlx and PostgreSQL.\n",
+        "Rust. Developed a Solana blockchain slippage estimation service,\nanalyzing on-chain events from Pump.fun, Raydium, and other platforms.\nUtilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.\n",
+        "Mentored a junior engineer.\n"
       ],
       "location": "St Petersburg City, Russia",
       "name": "Tradetech",
@@ -135,11 +137,11 @@
     {
       "endDate": "2023-10-31",
       "highlights": [
-        "Async Rust. Developed a service for monthly reporting (via email)\n        on exchange accounts activity to the regulatory authority.\n        Tracking metrics like trading volume, RPnL, and UPnL for selected period.\n        Sourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.",
-        "Async Rust. Build a logging system: capture every user request+response\n        without an impact on the normal request flow. Utilizing Clickhouse.",
-        "Async Rust. Implemented leader service election utilizing HashiCorp Consul.",
-        "Async Rust. Support for Solana payment gateway service ensuring data integrity\n        in cases of power outage (when graceful shutdown is not possible)",
-        "Async Rust. Developed a CRUD service for all kinds of entities\n        utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse."
+        "Async Rust. Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
+        "Async Rust. Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
+        "Async Rust. Implemented leader service election utilizing HashiCorp Consul.\n",
+        "Async Rust. Support for Solana payment gateway service ensuring data integrity\nin cases of power outage (when graceful shutdown is not possible).\n",
+        "Async Rust. Developed a CRUD service for all kinds of entities\nutilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.\n"
       ],
       "location": "St Petersburg City, Russia",
       "name": "Tradetech",

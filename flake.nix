@@ -63,6 +63,7 @@
         buildInputs = with pkgs; [
           # Tools
           act
+          typst
 
           # Editor tools
           efm-langserver
