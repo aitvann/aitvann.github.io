@@ -61,6 +61,9 @@
 
       devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
+          # Tools
+          act
+
           # Editor tools
           efm-langserver
           prettier
