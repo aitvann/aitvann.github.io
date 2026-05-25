@@ -33,6 +33,7 @@
       Seeking a remote systems programming role where strong systems knowledge, a
       focus on memory safety, and performance optimization experience
       contribute to building reliable and efficient software.
+      I am open-minded about using LLM (AI) for improving productivity.
     '';
   };
   education = [
