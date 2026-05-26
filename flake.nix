@@ -15,25 +15,19 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       lib = pkgs.lib;
-    in {
-      # Specify formatter package for "nix fmt ." and "nix fmt . -- --check"
-      formatter = pkgs.alejandra;
 
-      # Specify the builder package to use to build your resume, this
-      # will decide which theme to use.
-      #
-      # To show available packaged themes:
+      # Pick themes here
+      # To show available packaged jsonresume themes:
       # nix flake show github:etu/jsonresume-nix
-      #
-      # If you miss a theme, consider opening a pull request :)
+      jsonresume-theme = jsonresume-nix.packages.${system}.resumed-kendall;
+      # To show available typst themes:
+      # ls ./typst-themes/
+      typst-theme = "basic-resume";
+    in {
       packages = rec {
-        builder = jsonresume-nix.packages.${system}.resumed-kendall;
+        builder = jsonresume-theme;
         inherit (jsonresume-nix.packages.${system}) fmt-as-json;
 
-        # Build production build
-        #
-        # This may need customizations, such as using the correct file
-        # format and copying other resources (such as images).
         build-jsonresume = pkgs.runCommand "build-jsonresume" {} ''
           ln -s ${./resume.json} resume.json
           HOME=$(mktemp -d) ${lib.getExe self.packages.${system}.builder}
@@ -51,13 +45,29 @@
         jsonresume-live.type = "app";
         jsonresume-live.program = lib.getExe (jsonresume-nix.lib.${system}.buildLiveServer {
           builderDerivation = self.packages.${system}.builder;
-          # Optionally override the live server implementation:
-          # liveServerPackage = <your-custom-package>;
         });
 
         jsonresume-to-pdf.type = "app";
         jsonresume-to-pdf.program = lib.getExe (jsonresume-nix.lib.${system}.buildPrintToPdf {
           builderDerivation = self.packages.${system}.builder;
+        });
+
+        typst-live.type = "app";
+        typst-live.program = lib.getExe (pkgs.writeShellApplication {
+          name = "typst-live-reload-server";
+          runtimeInputs = with pkgs; [typst-live];
+          text = ''
+            ${lib.getExe pkgs.typst-live} ./typst-themes/${typst-theme}/resume.typ -- --root ./.
+          '';
+        });
+
+        typst-to-pdf.type = "app";
+        typst-to-pdf.program = lib.getExe (pkgs.writeShellApplication {
+          name = "typst-compile-to-pdf";
+          runtimeInputs = with pkgs; [typst];
+          text = ''
+            ${lib.getExe pkgs.typst} compile --root ./. ./typst-themes/${typst-theme}/resume.typ ./renders/typst-resume.pdf
+          '';
         });
       };
 
