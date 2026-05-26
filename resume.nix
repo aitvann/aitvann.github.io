@@ -15,7 +15,7 @@
     profiles = [
       {
         network = "LinkedIn";
-        url = "https://www.linkedin.com/in/aitvann/";
+        url = "https://www.linkedin.com/in/aitvann";
         username = "aitvann";
       }
       {
@@ -61,17 +61,20 @@
       position = "Software Engineer";
       highlights = [
         ''
-          Async Rust. Designed and built a scalable, distributed traffic limiting system
+          Async Rust with Tokio.
+        ''
+        ''
+          Designed and built a scalable, distributed traffic limiting system
           to enforce monthly and daily usage limits based on client subscription plans.
           Utilizing PostgreSQL.
         ''
         ''
-          Async Rust. Implemented an extensive integration with Paddle and Stripe payment gateways:
+          Implemented an extensive integration with Paddle and Stripe payment gateways:
           individual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,
           Sqlx and PostgreSQL.
         ''
         ''
-          Rust. Developed a Solana blockchain slippage estimation service,
+          Developed a Solana blockchain slippage estimation service,
           analyzing on-chain events from Pump.fun, Raydium, and other platforms.
           Utilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.
         ''
@@ -89,24 +92,27 @@
       position = "Junior Software Engineer";
       highlights = [
         ''
-          Async Rust. Developed a service for monthly reporting (via email)
+          Async Rust with Tokio.
+        ''
+        ''
+          Developed a service for monthly reporting (via email)
           on exchange accounts activity to the regulatory authority.
           Tracking metrics like trading volume, RPnL, and UPnL for selected period.
           Sourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.
         ''
         ''
-          Async Rust. Build a logging system: capture every user request+response
+          Build a logging system: capture every user request+response
           without an impact on the normal request flow. Utilizing Clickhouse.
         ''
         ''
-          Async Rust. Implemented leader service election utilizing HashiCorp Consul.
+          Implemented leader service election utilizing HashiCorp Consul.
         ''
         ''
-          Async Rust. Support for Solana payment gateway service ensuring data integrity
+          Support for Solana payment gateway service ensuring data integrity
           in cases of power outage (when graceful shutdown is not possible).
         ''
         ''
-          Async Rust. Developed a CRUD service for all kinds of entities
+          Developed a CRUD service for all kinds of entities
           utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.
         ''
       ];
@@ -132,6 +138,7 @@
         A tool I use myself as part of my daily workflow
         to integrate various tools in my system
       '';
+      startDate = "2025-10-25";
     }
     {
       name = "Smart Poselok";
@@ -168,8 +175,8 @@
   ];
   skills = [
     {
-      name = "Languages";
-      keywords = ["Rust (expert)" "C++" "Clojure" "Nix"];
+      name = "Programming Languages";
+      keywords = ["Rust (expert)" "C++" "Lua" "Clojure" "Nix"];
     }
     {
       name = "Soft Skills";

@@ -11,7 +11,7 @@
       }
     }
   }
-  
+
   profile
 }
 
@@ -19,10 +19,10 @@
 #let r = json("../../resume.json")
 #let lang = r.meta.language
 #let name = r.basics.name
-#let address = r.basics.location.city + ", " + r.basics.location.region
+#let address = (r.basics.location.city, r.basics.location.region).filter(c => c != "").join(", ")
 #let emailAddress = r.basics.email
 #let phoneNumber = r.basics.phone
-#let website = r.basics.at("url", default:none) //Set to none if you want to hide it
+#let website = r.basics.at("url", default: none) //Set to none if you want to hide it
 #let githubProfile = none
 #let linkedinProfile = none
 #if getProfile(r, "GitHub") != none {
@@ -40,7 +40,7 @@
 
 #show: resume.with(
   author: name,
-  location: address,
+  // location: address,
   email: emailAddress,
   language: lang,
   ..if githubProfile != none {
@@ -54,38 +54,32 @@
   phone: phoneNumber,
 
   ..if website != none {
-    ( personal-site: website )
+    (personal-site: website)
   },
 )
+
+#to-content(r.basics.summary)
 
 // Section work experience
 #if show_work and r.work != none and r.work.len() > 0 {
   work(work: r.work, lang: lang)
 }
+
 // Section projects
 #if show_projects and r.projects != none and r.projects.len() > 0 {
   projects(projects: r.projects, lang: lang)
 }
+
 // Section education
 #if show_education and r.education != none and r.education.len() > 0 {
   edu(education: r.education, lang: lang)
 }
+
 // Section certificates, skills and interests
-#if show_cert_skills_interests and (
-  (("certificates" in r and r.certificates != none and r.certificates.len() > 0) or
-  ("skills" in r and r.skills != none and r.skills.len() > 0) or
-  ("interests" in r and r.interests != none and r.interests.len() > 0))
-) {
-  cumulativeCertSkillsInterests(
-    ..if "certificates" in r and r.certificates != none {
-      (certifications: r.certificates)
-    },
-    ..if "skills" in r and r.skills != none {
-      (skills: r.skills)
-    },
-    ..if "interests" in r and r.interests != none and r.interests.len() > 0 {
-      (interests: r.interests)
-    },
-    lang: lang,
-  )
-}
+#cumulativeCertSkillsInterests(
+  certifications: r.at("certificates", default: none),
+  skills: r.at("skills", default: none),
+  languages: r.at("languages", default: none),
+  interests: r.at("interests", default: none),
+  lang: lang,
+)

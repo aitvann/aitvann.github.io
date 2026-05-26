@@ -15,7 +15,7 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "url": "https://www.linkedin.com/in/aitvann/",
+        "url": "https://www.linkedin.com/in/aitvann",
         "username": "aitvann"
       },
       {
@@ -66,6 +66,7 @@
     {
       "description": "A tool I use myself as part of my daily workflow\nto integrate various tools in my system\n",
       "name": "Current Location",
+      "startDate": "2025-10-25",
       "url": "https://github.com/aitvann/current-location"
     },
     {
@@ -93,10 +94,11 @@
       "keywords": [
         "Rust (expert)",
         "C++",
+        "Lua",
         "Clojure",
         "Nix"
       ],
-      "name": "Languages"
+      "name": "Programming Languages"
     },
     {
       "keywords": [
@@ -123,9 +125,10 @@
     {
       "endDate": "2025-04",
       "highlights": [
-        "Async Rust. Designed and built a scalable, distributed traffic limiting system\nto enforce monthly and daily usage limits based on client subscription plans.\nUtilizing PostgreSQL.\n",
-        "Async Rust. Implemented an extensive integration with Paddle and Stripe payment gateways:\nindividual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,\nSqlx and PostgreSQL.\n",
-        "Rust. Developed a Solana blockchain slippage estimation service,\nanalyzing on-chain events from Pump.fun, Raydium, and other platforms.\nUtilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.\n",
+        "Async Rust with Tokio.\n",
+        "Designed and built a scalable, distributed traffic limiting system\nto enforce monthly and daily usage limits based on client subscription plans.\nUtilizing PostgreSQL.\n",
+        "Implemented an extensive integration with Paddle and Stripe payment gateways:\nindividual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,\nSqlx and PostgreSQL.\n",
+        "Developed a Solana blockchain slippage estimation service,\nanalyzing on-chain events from Pump.fun, Raydium, and other platforms.\nUtilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.\n",
         "Mentored a junior engineer.\n"
       ],
       "location": "St Petersburg City, Russia",
@@ -137,11 +140,12 @@
     {
       "endDate": "2023-10-31",
       "highlights": [
-        "Async Rust. Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
-        "Async Rust. Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
-        "Async Rust. Implemented leader service election utilizing HashiCorp Consul.\n",
-        "Async Rust. Support for Solana payment gateway service ensuring data integrity\nin cases of power outage (when graceful shutdown is not possible).\n",
-        "Async Rust. Developed a CRUD service for all kinds of entities\nutilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.\n"
+        "Async Rust with Tokio.\n",
+        "Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
+        "Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
+        "Implemented leader service election utilizing HashiCorp Consul.\n",
+        "Support for Solana payment gateway service ensuring data integrity\nin cases of power outage (when graceful shutdown is not possible).\n",
+        "Developed a CRUD service for all kinds of entities\nutilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.\n"
       ],
       "location": "St Petersburg City, Russia",
       "name": "Tradetech",

@@ -1,15 +1,22 @@
 #import "@preview/scienceicons:0.0.6": orcid-icon
 
+#let to-content(str) = {
+  eval(str, mode: "markup")
+}
+
 // Header + first item unbreakable
-#let section_with_header(title, first_item, rest_items) = [
-  #block(breakable: false)[
-    #title
-    #first_item
-  ]
-  #for item in rest_items {
-    [#item]
+#let section_with_header(title, items) = {
+  if items.len() > 0 {
+    block(breakable: false)[
+      #title
+      #items.at(0)
+    ]
+
+    for item in items.slice(1, items.len()) {
+      [#item]
+    }
   }
-]
+}
 
 #let getMonthNames(lang) = {
   if lang == "de" {
@@ -69,7 +76,7 @@
   interests: (de: upper("Interessen"), it: "Interessi", en: "Interests"),
   certifications: (de: upper("Zertifikate"), it: "Certificazioni", en: "Certifications"),
   extra: (de: upper("Wahlfächer"), it: upper("Attività Extracurriculari"), en: upper("Extracurriculars")),
-  languages: (de: upper("Sprachen"), it: upper("Lingue"), en: upper("Languages")),
+  languages: (de: upper("Sprachen"), it: upper("Lingue"), en: "Languages"),
   actual: (de: upper("Aktuell"), it: "Attuale", en: "Present"),
   conjunction_word: (de: upper("und"), it: upper("e"), en: upper("&")),
 )
@@ -93,13 +100,10 @@
 }
 
 #let build_section(title, items, item_builder, lang) = {
-  if items.len() > 0 {
-    section_with_header(
-      [== #get_section_title(title, lang)],
-      item_builder(items.at(0), lang),
-      items.slice(1, items.len()).map(item => item_builder(item, lang)),
-    )
-  }
+  section_with_header(
+    [== #get_section_title(title, lang)],
+    items.map(item => item_builder(item, lang)),
+  )
 }
 
 #let resume(
@@ -115,7 +119,7 @@
   personal-site: "",
   orcid: "",
   accent-color: "#000000",
-  font: "Garamond",
+  font: "GaramondLibre",
   paper: "a4",
   body,
 ) = {
@@ -126,7 +130,7 @@
   set text(
     // LaTeX style font
     font: font,
-    size: 12pt,
+    size: 10pt,
     lang: language,
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
     ligatures: false,
@@ -185,7 +189,7 @@
   pad(
     top: -2.5pt,
     align(personal-info-position)[
-      #set text(size: 16pt) // Adjust text size for this section
+      #set text(size: 11pt) // Adjust text size for this section
       #{
         let items = (
           contact-item(email, link-type: "mailto:"),
@@ -281,7 +285,7 @@
 
   if "highlights" in job and job.highlights != none {
     for highlight in job.highlights {
-      [- #highlight]
+      [- #to-content(highlight)]
     }
   }
 }
@@ -291,17 +295,25 @@
 }
 
 #let getProjectPart(proj, lang) = {
-  generic-two-by-two(
-    top-left: strong(proj.name),
-    top-right: strong(formatDateRange(proj, lang)),
-    ..if "roles" in proj and proj.roles != none and proj.roles.len() > 0 {
-      (bottom-left: emph(proj.roles.join(", ")))
-    },
-    ..if "url" in proj and proj.url != none {
-      (bottom-right: proj.url)
-    },
-  )
+  let projectName = if "url" in proj and proj.url != none {
+    link(proj.url)[#proj.name]
+  } else {
+    proj.name
+  }
 
+  let roles = proj.at("roles", default: ()).filter(r => r != "").map(emph).join(", ")
+
+  block(breakable: false)[
+    #generic-one-by-two(
+      left: [#strong(projectName) #roles],
+      right: strong(formatDateRange(proj, lang)),
+    )
+
+    #if "description" in proj and proj.description != none {
+      to-content(proj.description)
+    }
+
+  ]
   if "highlights" in proj and proj.highlights != none {
     for highlight in proj.highlights {
       [- #highlight]
@@ -328,6 +340,7 @@
 #let cumulativeCertSkillsInterests(
   certifications: (),
   skills: (),
+  languages: (),
   interests: (),
   lang: "",
 ) = {
@@ -350,42 +363,40 @@
   // Certifications block
   let cert_block = if certifications != none and certifications.len() > 0 {
     block(breakable: false)[
-      - #strong(get_section_title("certifications", lang)): #for (i, cert) in certifications.enumerate() {
-          if i != 0 { ", " }
-          cert.name
-        }
+      - #strong(get_section_title("certifications", lang)): #certifications.join(", ")
     ]
   } else { none }
 
   // Skills blocks
   let skills_blocks = if skills != none and skills.len() > 0 {
-    skills.map(skill => block(breakable: false)[
-      - #strong(skill.name): #for (i, keyword) in skill.keywords.enumerate() {
-          if i != 0 { ", " }
-          keyword
-        }
-    ])
-  } else { () }
+    skills
+      .map(skill => block(breakable: false)[
+        - #strong(skill.name): #skill.keywords.join(", ")
+      ])
+      .join([])
+  } else { none }
+
+  // Languages block
+  let languages_block = if languages != none and languages.len() > 0 {
+    let langs = languages.map(language => [#language.language (#language.fluency)]).join(", ")
+    block(breakable: false)[
+      - #strong(get_section_title("languages", lang)): #langs
+    ]
+  } else { none }
 
   // Interests block
   let interests_block = if interests != none and interests.len() > 0 {
     block(breakable: false)[
-      - #strong(get_section_title("interests", lang)): #for (i, interest) in interests.enumerate() {
-          if i != 0 { ", " }
-          interest.name
-        }
+      - #strong(get_section_title("interests", lang)): #interests.map(i => i.name).join(", ")
     ]
   } else { none }
 
-  // Collect all blocks, filter out none
-  let all_blocks = (cert_block,).filter(x => x != none) + skills_blocks + (interests_block,).filter(x => x != none)
+  let all_blocks = (
+    cert_block,
+    languages_block,
+    skills_blocks,
+    interests_block,
+  ).filter(x => x != none)
 
-  // Use section_with_header if there is at least one block
-  if all_blocks.len() > 0 {
-    section_with_header(
-      title,
-      all_blocks.at(0),
-      all_blocks.slice(1, all_blocks.len()),
-    )
-  }
+  section_with_header(title, all_blocks)
 }

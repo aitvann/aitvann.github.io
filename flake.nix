@@ -23,6 +23,14 @@
       # To show available typst themes:
       # ls ./typst-themes/
       typst-theme = "basic-resume";
+
+      # FIXME: does not work for some reason
+      fonts = pkgs.lib.concatStringsSep ":" [
+        # "${pkgs.garamond-libre}/share/fonts"
+        # "${pkgs.garamond-libre}/share/truetype"
+        # "${pkgs.garamond-libre}/share/opentype"
+        "${pkgs.garamond-libre}/share/fonts/opentype"
+      ];
     in {
       packages = rec {
         builder = jsonresume-theme;
@@ -56,6 +64,9 @@
         typst-live.program = lib.getExe (pkgs.writeShellApplication {
           name = "typst-live-reload-server";
           runtimeInputs = with pkgs; [typst-live];
+          runtimeEnv = {
+            TYPST_FONT_PATHS = fonts;
+          };
           text = ''
             ${lib.getExe pkgs.typst-live} ./typst-themes/${typst-theme}/resume.typ -- --root ./.
           '';
@@ -65,6 +76,9 @@
         typst-to-pdf.program = lib.getExe (pkgs.writeShellApplication {
           name = "typst-compile-to-pdf";
           runtimeInputs = with pkgs; [typst];
+          runtimeEnv = {
+            TYPST_FONT_PATHS = fonts;
+          };
           text = ''
             ${lib.getExe pkgs.typst} compile --root ./. ./typst-themes/${typst-theme}/resume.typ ./renders/typst-resume.pdf
           '';
@@ -72,6 +86,8 @@
       };
 
       devShells.default = pkgs.mkShell {
+        TYPST_FONT_PATHS = fonts;
+
         buildInputs = with pkgs; [
           # Tools
           act
