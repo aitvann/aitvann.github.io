@@ -26,7 +26,7 @@
       # nix flake show github:etu/jsonresume-nix
       #
       # If you miss a theme, consider opening a pull request :)
-      packages = {
+      packages = rec {
         builder = jsonresume-nix.packages.${system}.resumed-kendall;
         inherit (jsonresume-nix.packages.${system}) fmt-as-json;
 
@@ -34,7 +34,7 @@
         #
         # This may need customizations, such as using the correct file
         # format and copying other resources (such as images).
-        default = pkgs.runCommand "resume" {} ''
+        build-jsonresume = pkgs.runCommand "build-jsonresume" {} ''
           ln -s ${./resume.json} resume.json
           HOME=$(mktemp -d) ${lib.getExe self.packages.${system}.builder}
           mkdir $out
@@ -42,19 +42,21 @@
           # Copy other resources such as images here...
           cp -rv ${./resources} $out/resources
         '';
+
+        default = build-jsonresume;
       };
 
-      # Allows to run a live preview server using "nix run .#live"
+      # Allows to run a live preview server using "nix run .#jsonresume-live"
       apps = {
-        live.type = "app";
-        live.program = lib.getExe (jsonresume-nix.lib.${system}.buildLiveServer {
+        jsonresume-live.type = "app";
+        jsonresume-live.program = lib.getExe (jsonresume-nix.lib.${system}.buildLiveServer {
           builderDerivation = self.packages.${system}.builder;
           # Optionally override the live server implementation:
           # liveServerPackage = <your-custom-package>;
         });
 
-        print.type = "app";
-        print.program = lib.getExe (jsonresume-nix.lib.${system}.buildPrintToPdf {
+        jsonresume-to-pdf.type = "app";
+        jsonresume-to-pdf.program = lib.getExe (jsonresume-nix.lib.${system}.buildPrintToPdf {
           builderDerivation = self.packages.${system}.builder;
         });
       };
