@@ -66,10 +66,15 @@
           typst
 
           # Editor tools
+          tinymist
+
+          codebook
+
           efm-langserver
-          prettier
           pandoc
           markdownlint-cli2
+          # Not editing json in this project
+          # prettier
 
           nixd
           alejandra

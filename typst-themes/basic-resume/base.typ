@@ -14,21 +14,49 @@
 #let getMonthNames(lang) = {
   if lang == "de" {
     return (
-      "01": "Jan", "02": "Feb", "03": "Mär", "04": "Apr", 
-      "05": "Mai", "06": "Jun", "07": "Jul", "08": "Aug", 
-      "09": "Sep", "10": "Okt", "11": "Nov", "12": "Dez"
+      "01": "Jan",
+      "02": "Feb",
+      "03": "Mär",
+      "04": "Apr",
+      "05": "Mai",
+      "06": "Jun",
+      "07": "Jul",
+      "08": "Aug",
+      "09": "Sep",
+      "10": "Okt",
+      "11": "Nov",
+      "12": "Dez",
     )
   } else if lang == "it" {
     return (
-      "01": "Gen", "02": "Feb", "03": "Mar", "04": "Apr", 
-      "05": "Mag", "06": "Giu", "07": "Lug", "08": "Ago", 
-      "09": "Set", "10": "Ott", "11": "Nov", "12": "Dic"
+      "01": "Gen",
+      "02": "Feb",
+      "03": "Mar",
+      "04": "Apr",
+      "05": "Mag",
+      "06": "Giu",
+      "07": "Lug",
+      "08": "Ago",
+      "09": "Set",
+      "10": "Ott",
+      "11": "Nov",
+      "12": "Dic",
     )
-  } else { // English as default
+  } else {
+    // English as default
     return (
-      "01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", 
-      "05": "May", "06": "Jun", "07": "Jul", "08": "Aug", 
-      "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec"
+      "01": "Jan",
+      "02": "Feb",
+      "03": "Mar",
+      "04": "Apr",
+      "05": "May",
+      "06": "Jun",
+      "07": "Jul",
+      "08": "Aug",
+      "09": "Sep",
+      "10": "Oct",
+      "11": "Nov",
+      "12": "Dec",
     )
   }
 }
@@ -57,7 +85,7 @@
 }
 
 #let getDegreeDate(lang, education) = {
-  if "endDate" in education { 
+  if "endDate" in education {
     formatDate(education.endDate, getMonthNames(lang))
   } else {
     get_section_title("actual", lang)
@@ -69,7 +97,7 @@
     section_with_header(
       [== #get_section_title(title, lang)],
       item_builder(items.at(0), lang),
-      items.slice(1, items.len()).map(item => item_builder(item, lang))
+      items.slice(1, items.len()).map(item => item_builder(item, lang)),
     )
   }
 }
@@ -101,10 +129,10 @@
     size: 12pt,
     lang: language,
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
-    ligatures: false
+    ligatures: false,
   )
 
-  // Reccomended to have 0.5in margin on all sides
+  // Recommended to have 0.5in margin on all sides
   set page(
     // margin: (0.5in),
     margin: (top: 0.76cm, bottom: 0.76cm, left: 1.27cm, right: 1.27cm),
@@ -175,9 +203,9 @@
 
   pad(
     top: -7pt,
-    line(length: 100%, stroke: 1pt)
+    line(length: 100%, stroke: 1pt),
   )
-  
+
 
   // Main body.
   set par(justify: true)
@@ -208,7 +236,7 @@
   ]
 }
 
-// Cannot just use normal --- ligature becuase ligatures are disabled for good reasons
+// Cannot just use normal --- ligature because ligatures are disabled for good reasons
 #let dates-helper(
   start-date: "",
   end-date: "",
@@ -218,11 +246,11 @@
 
 #let formatDateRange(item, lang) = {
   let monthNames = getMonthNames(lang)
-  
+
   if "startDate" in item and not "endDate" in item {
     dates-helper(
       start-date: formatDate(item.startDate, monthNames),
-      end-date: get_section_title("actual", lang)
+      end-date: get_section_title("actual", lang),
     )
   } else if "endDate" in item and not "startDate" in item {
     formatDate(item.startDate, monthNames)
@@ -232,7 +260,7 @@
     } else {
       dates-helper(
         start-date: formatDate(item.startDate, monthNames),
-        end-date: formatDate(item.endDate, monthNames)
+        end-date: formatDate(item.endDate, monthNames),
       )
     }
   } else {
@@ -323,9 +351,9 @@
   let cert_block = if certifications != none and certifications.len() > 0 {
     block(breakable: false)[
       - #strong(get_section_title("certifications", lang)): #for (i, cert) in certifications.enumerate() {
-        if i != 0 { ", " }
-        cert.name
-      }
+          if i != 0 { ", " }
+          cert.name
+        }
     ]
   } else { none }
 
@@ -333,9 +361,9 @@
   let skills_blocks = if skills != none and skills.len() > 0 {
     skills.map(skill => block(breakable: false)[
       - #strong(skill.name): #for (i, keyword) in skill.keywords.enumerate() {
-        if i != 0 { ", " }
-        keyword
-      }
+          if i != 0 { ", " }
+          keyword
+        }
     ])
   } else { () }
 
@@ -343,9 +371,9 @@
   let interests_block = if interests != none and interests.len() > 0 {
     block(breakable: false)[
       - #strong(get_section_title("interests", lang)): #for (i, interest) in interests.enumerate() {
-        if i != 0 { ", " }
-        interest.name
-      }
+          if i != 0 { ", " }
+          interest.name
+        }
     ]
   } else { none }
 
@@ -357,7 +385,7 @@
     section_with_header(
       title,
       all_blocks.at(0),
-      all_blocks.slice(1, all_blocks.len())
+      all_blocks.slice(1, all_blocks.len()),
     )
   }
 }
