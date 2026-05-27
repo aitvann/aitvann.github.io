@@ -39,8 +39,9 @@
   };
   education = [
     {
-      institution = "Институт среднего профессионального образования СПбПУ";
-      url = "https://college.spbstu.ru/";
+      # institution = "Институт среднего профессионального образования СПбПУ";
+      institution = "College of Peter the Great St. Petersburg Polytechnic University (SPbPU)";
+      url = "https://college.spbstu.ru";
       area = "Information Technology";
       studyType = "Bachelor";
       startDate = "2018-09-01";

@@ -314,7 +314,8 @@
   generic-two-by-two(
     top-left: strong(education_item.institution),
     top-right: strong(getDegreeDate(lang, education_item)),
-    bottom-left: emph(education_item.studyType + ", " + education_item.area),
+    bottom-right: emph(education_item.studyType + ", " + education_item.area),
+    bottom-left: education_item.url,
   )
 }
 
