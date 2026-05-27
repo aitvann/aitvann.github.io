@@ -180,7 +180,11 @@
     }
     {
       name = "Soft Skills";
-      keywords = ["Technical mentoring" "Self-directed learning"];
+      keywords = ["Technical mentoring" "Self-directed learning" "Agile" "Scrum"];
+    }
+    {
+      name = "Software Development";
+      keywords = ["Code Review" "TDD" "DDD"];
     }
     {
       name = "Ops";

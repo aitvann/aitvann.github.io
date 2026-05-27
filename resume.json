@@ -103,9 +103,19 @@
     {
       "keywords": [
         "Technical mentoring",
-        "Self-directed learning"
+        "Self-directed learning",
+        "Agile",
+        "Scrum"
       ],
       "name": "Soft Skills"
+    },
+    {
+      "keywords": [
+        "Code Review",
+        "TDD",
+        "DDD"
+      ],
+      "name": "Software Development"
     },
     {
       "keywords": [
