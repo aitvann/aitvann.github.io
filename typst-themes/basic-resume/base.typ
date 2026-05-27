@@ -19,35 +19,20 @@
 }
 
 #let getMonthNames(lang) = {
-  if lang == "de" {
+  if lang == "ru" {
     return (
-      "01": "Jan",
-      "02": "Feb",
-      "03": "Mär",
-      "04": "Apr",
-      "05": "Mai",
-      "06": "Jun",
-      "07": "Jul",
-      "08": "Aug",
-      "09": "Sep",
-      "10": "Okt",
-      "11": "Nov",
-      "12": "Dez",
-    )
-  } else if lang == "it" {
-    return (
-      "01": "Gen",
-      "02": "Feb",
-      "03": "Mar",
-      "04": "Apr",
-      "05": "Mag",
-      "06": "Giu",
-      "07": "Lug",
-      "08": "Ago",
-      "09": "Set",
-      "10": "Ott",
-      "11": "Nov",
-      "12": "Dic",
+      "01": "Янв",
+      "02": "Фев",
+      "03": "Мар",
+      "04": "Апр",
+      "05": "Май",
+      "06": "Июн",
+      "07": "Июл",
+      "08": "Авг",
+      "09": "Сен",
+      "10": "Окт",
+      "11": "Ноя",
+      "12": "Дек",
     )
   } else {
     // English as default
@@ -69,16 +54,16 @@
 }
 
 #let section_titles = (
-  work: (de: upper("Berufserfahrung"), it: upper("Esperienza Lavorativa"), en: upper("Work Experience")),
-  education: (de: upper("Bildungsweg"), it: upper("Istruzione"), en: upper("Education")),
-  projects: (de: upper("Projekte"), it: upper("Progetti"), en: upper("Projects")),
-  skills: (de: upper("Kenntnisse"), it: "Competenze", en: "Skills"),
-  interests: (de: upper("Interessen"), it: "Interessi", en: "Interests"),
-  certifications: (de: upper("Zertifikate"), it: "Certificazioni", en: "Certifications"),
-  extra: (de: upper("Wahlfächer"), it: upper("Attività Extracurriculari"), en: upper("Extracurriculars")),
-  languages: (de: upper("Sprachen"), it: upper("Lingue"), en: "Languages"),
-  actual: (de: upper("Aktuell"), it: "Attuale", en: "Present"),
-  conjunction_word: (de: upper("und"), it: upper("e"), en: upper("&")),
+  work: (ru: upper("Опыт Работы"), en: upper("Work Experience")),
+  education: (ru: upper("Образование"), en: upper("Education")),
+  projects: (ru: upper("Проекты"), en: upper("Projects")),
+  skills: (ru: upper("Навыки"), en: "Skills"),
+  interests: (ru: upper("Интересы"), en: "Interests"),
+  certifications: (ru: upper("Сертефикаты"), en: "Certifications"),
+  extra: (ru: upper("Курсы"), en: upper("Extracurriculars")),
+  languages: (ru: upper("Языки"), en: "Languages"),
+  actual: (ru: "Текущее время", en: "Present"),
+  conjunction_word: (ru: upper("&"), en: upper("&")),
 )
 
 #let get_section_title(section, lang) = section_titles.at(section).at(lang, default: section)
