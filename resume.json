@@ -64,7 +64,7 @@
   },
   "projects": [
     {
-      "description": "A tool for sharing \"current-working-file\" between various tools\nfor better integration between them.\n",
+      "description": "A tool for sharing \"current-working-file\" between various programs\nfor better integration between them.\n",
       "name": "Current Location",
       "startDate": "2025-10-25",
       "url": "https://github.com/aitvann/current-location"

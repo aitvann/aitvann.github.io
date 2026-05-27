@@ -136,7 +136,7 @@
       name = "Current Location";
       url = "https://github.com/aitvann/current-location";
       description = ''
-        A tool for sharing "current-working-file" between various tools
+        A tool for sharing "current-working-file" between various programs
         for better integration between them.
       '';
       startDate = "2025-10-25";
