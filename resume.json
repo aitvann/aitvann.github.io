@@ -64,13 +64,13 @@
   },
   "projects": [
     {
-      "description": "A tool I use myself as part of my daily workflow\nto integrate various tools in my system\n",
+      "description": "A tool for sharing \"current-working-file\" between various tools\nfor better integration between them.\n",
       "name": "Current Location",
       "startDate": "2025-10-25",
       "url": "https://github.com/aitvann/current-location"
     },
     {
-      "description": "Management system of suburban settlements with\nan extensive role-based access control system\n",
+      "description": "Management system of suburban settlements with\nan extensive role-based access control system.\n",
       "endDate": "2022-06-30",
       "name": "Smart Poselok",
       "roles": [
@@ -166,8 +166,8 @@
     {
       "endDate": "2021-08-31",
       "highlights": [
-        "C++. 3D Model mesh optimization research",
-        "Python. Bug fixes"
+        "C++. 3D Model mesh optimization research.",
+        "Python. Bug fixes."
       ],
       "location": "St Petersburg City, Russia",
       "name": "Wargaming",

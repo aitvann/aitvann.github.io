@@ -125,8 +125,8 @@
       endDate = "2021-08-31";
       position = "Software Engineer Intern";
       highlights = [
-        "C++. 3D Model mesh optimization research"
-        "Python. Bug fixes"
+        "C++. 3D Model mesh optimization research."
+        "Python. Bug fixes."
       ];
     }
   ];
@@ -135,8 +135,8 @@
       name = "Current Location";
       url = "https://github.com/aitvann/current-location";
       description = ''
-        A tool I use myself as part of my daily workflow
-        to integrate various tools in my system
+        A tool for sharing "current-working-file" between various tools
+        for better integration between them.
       '';
       startDate = "2025-10-25";
     }
@@ -145,7 +145,7 @@
       url = "https://github.com/aitvann/smart-poselok";
       description = ''
         Management system of suburban settlements with
-        an extensive role-based access control system
+        an extensive role-based access control system.
       '';
       startDate = "2022-04-30";
       endDate = "2022-06-30";
