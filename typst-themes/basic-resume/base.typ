@@ -1,5 +1,3 @@
-#import "@preview/scienceicons:0.0.6": orcid-icon
-
 #let to-content(str) = {
   eval(str, mode: "markup")
 }
@@ -183,7 +181,6 @@
           contact-item(github, link-type: "https://"),
           contact-item(linkedin, link-type: "https://"),
           contact-item(personal-site, link-type: "https://"),
-          contact-item(orcid, prefix: [#orcid-icon(color: rgb("#AECD54"))orcid.org/], link-type: "https://orcid.org/"),
         )
         items.filter(x => x != none and x != "").map(x => box(x)).join(" | ")
       }

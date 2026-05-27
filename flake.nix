@@ -32,20 +32,23 @@
         "${pkgs.garamond-libre}/share/fonts/opentype"
       ];
     in {
-      packages = rec {
+      packages = {
         builder = jsonresume-theme;
         inherit (jsonresume-nix.packages.${system}) fmt-as-json;
 
-        build-jsonresume = pkgs.runCommand "build-jsonresume" {} ''
+        default = pkgs.runCommand "build-jsonresume-and-typst" {} ''
           ln -s ${./resume.json} resume.json
           HOME=$(mktemp -d) ${lib.getExe self.packages.${system}.builder}
+
           mkdir $out
           cp -v resume.html $out/index.html
           # Copy other resources such as images here...
           cp -rv ${./resources} $out/resources
-        '';
 
-        default = build-jsonresume;
+          # `ln` does not work because `typst` follows links
+          cp -r ${./typst-themes} typst-themes
+          ${lib.getExe pkgs.typst} compile --root ./ ./typst-themes/${typst-theme}/resume.typ $out/Rust_Ivan_Aitzhanov.pdf
+        '';
       };
 
       # Allows to run a live preview server using "nix run .#jsonresume-live"
@@ -80,7 +83,7 @@
             TYPST_FONT_PATHS = fonts;
           };
           text = ''
-            ${lib.getExe pkgs.typst} compile --root ./. ./typst-themes/${typst-theme}/resume.typ ./renders/typst-resume.pdf
+            ${lib.getExe pkgs.typst} compile --root ./. ./typst-themes/${typst-theme}/resume.typ ./resume.pdf
           '';
         });
       };
