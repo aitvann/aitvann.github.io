@@ -16,6 +16,25 @@
   }
 }
 
+#let keywords = (
+  "gRPC",
+  "PostgreSQL",
+  "Clickhouse",
+  "Kafka",
+  "RabbitMQ",
+  "Google PubSub",
+  "Tokio",
+  "Axum",
+  "Actix Web",
+  "Sqlx",
+  "HashiCorp Consul",
+  "PostgreSQL",
+  "Rust",
+  "C\+\+",
+  "Python",
+  "Solana",
+)
+
 #let getMonthNames(lang) = {
   if lang == "ru" {
     return (
@@ -125,6 +144,8 @@
     margin: (top: 0.76cm, bottom: 0.76cm, left: 1.27cm, right: 1.27cm),
     paper: paper,
   )
+
+  set text(hyphenate: false)
 
   // Link styles
   // show link: underline
@@ -267,7 +288,8 @@
 
   if "highlights" in job and job.highlights != none {
     for highlight in job.highlights {
-      [- #to-content(highlight)]
+      show regex(keywords.join("|")): strong
+      [- #block(width: 90%, to-content(highlight))]
     }
   }
 }
@@ -292,12 +314,14 @@
     )
 
     #if "description" in proj and proj.description != none {
+      show regex(keywords.join("|")): strong
       to-content(proj.description)
     }
 
   ]
   if "highlights" in proj and proj.highlights != none {
     for highlight in proj.highlights {
+      show regex(keywords.join("|")): strong
       [- #highlight]
     }
   }

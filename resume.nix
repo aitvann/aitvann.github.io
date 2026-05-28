@@ -110,10 +110,10 @@
         ''
         ''
           Support for Solana payment gateway service ensuring data integrity
-          in cases of power outage (when graceful shutdown is not possible).
+          in cases of a power outage (when graceful shutdown is not possible).
         ''
         ''
-          Developed a CRUD service for all kinds of entities
+          Developed a CRUD service for various
           utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.
         ''
       ];
@@ -191,10 +191,6 @@
       name = "Ops";
       keywords = ["Linux" "HashiCorp Consul" "Nix (OS, PM, DSL)"];
     }
-    {
-      name = "FinTech";
-      keywords = [];
-    }
   ];
   languages = [
     {
@@ -206,7 +202,14 @@
       language = "English";
     }
   ];
-  interests = [{name = "Open Source";}];
+  interests = [
+    {
+      name = "FinTech";
+    }
+    {
+      name = "Open Source";
+    }
+  ];
   meta = {
     canonical = "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json";
     version = "v1.0.0";
