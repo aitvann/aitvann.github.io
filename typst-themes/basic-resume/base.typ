@@ -279,8 +279,14 @@
 
 // Section components below
 #let getWorkPart(job, lang) = {
+  let workName = if "url" in job and job.url != none {
+    link(job.url, job.name)
+  } else {
+    job.name
+  }
+
   generic-two-by-two(
-    top-left: strong(job.name),
+    top-left: strong(workName),
     top-right: strong(formatDateRange(job, lang)),
     bottom-left: emph(job.position),
     ..if "location" in job and job.location != none {
