@@ -85,6 +85,22 @@
       ];
     }
     {
+      name = "Chi2";
+      location = "St Petersburg City, Russia";
+      startDate = "2023-12";
+      endDate = "2024-04";
+      position = "Software Engineer";
+      highlights = [
+        ''
+          Rust. Developed low-latency connectors to exchanges (OKX, ByBit)
+          utilizing RestAPI and WebSocket.
+        ''
+        ''
+          Implemented various latency-oriented TCP optimization techniques.
+        ''
+      ];
+    }
+    {
       name = "Tradetech";
       url = "https://www.linkedin.com/company/85363151";
       location = "St Petersburg City, Russia";
@@ -112,10 +128,10 @@
           Support for Solana payment gateway service ensuring data integrity
           in cases of a power outage (when graceful shutdown is not possible).
         ''
-        ''
-          Developed a CRUD service for various
-          utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.
-        ''
+        # ''
+        #   Developed a CRUD service for various
+        #   utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.
+        # ''
       ];
     }
     {
@@ -132,15 +148,15 @@
     }
   ];
   projects = [
-    {
-      name = "Current Location";
-      url = "https://github.com/aitvann/current-location";
-      description = ''
-        A tool for sharing "current-working-file" between various programs
-        for better integration between them.
-      '';
-      startDate = "2025-10-25";
-    }
+    # {
+    #   name = "Current Location";
+    #   url = "https://github.com/aitvann/current-location";
+    #   description = ''
+    #     A tool for sharing "current-working-file" between various programs
+    #     for better integration between them.
+    #   '';
+    #   startDate = "2025-10-25";
+    # }
     {
       name = "Smart Poselok";
       url = "https://github.com/aitvann/smart-poselok";
@@ -158,7 +174,7 @@
       name = "Rustenger";
       url = "https://github.com/aitvann/Rustenger";
       description = ''
-        Simple messenger using Rust and Tokio
+        Simple messenger using Rust and Tokio.
       '';
       startDate = "2020-01-05";
       endDate = "2020-05-17";

@@ -67,12 +67,6 @@
   },
   "projects": [
     {
-      "description": "A tool for sharing \"current-working-file\" between various programs\nfor better integration between them.\n",
-      "name": "Current Location",
-      "startDate": "2025-10-25",
-      "url": "https://github.com/aitvann/current-location"
-    },
-    {
       "description": "Management system of suburban settlements with\nan extensive role-based access control system.\n",
       "endDate": "2022-06-30",
       "name": "Smart Poselok",
@@ -83,7 +77,7 @@
       "url": "https://github.com/aitvann/smart-poselok"
     },
     {
-      "description": "Simple messenger using Rust and Tokio\n",
+      "description": "Simple messenger using Rust and Tokio.\n",
       "endDate": "2020-05-17",
       "name": "Rustenger",
       "startDate": "2020-01-05",
@@ -147,14 +141,24 @@
       "url": "https://www.linkedin.com/company/85363151"
     },
     {
+      "endDate": "2024-04",
+      "highlights": [
+        "Rust. Developed low-latency connectors to exchanges (OKX, ByBit)\nutilizing RestAPI and WebSocket.\n",
+        "Implemented various latency-oriented TCP optimization techniques.\n"
+      ],
+      "location": "St Petersburg City, Russia",
+      "name": "Chi2",
+      "position": "Software Engineer",
+      "startDate": "2023-12"
+    },
+    {
       "endDate": "2023-10-31",
       "highlights": [
         "Async Rust with Tokio.\n",
         "Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
         "Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
         "Implemented leader service election utilizing HashiCorp Consul.\n",
-        "Support for Solana payment gateway service ensuring data integrity\nin cases of a power outage (when graceful shutdown is not possible).\n",
-        "Developed a CRUD service for various\nutilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.\n"
+        "Support for Solana payment gateway service ensuring data integrity\nin cases of a power outage (when graceful shutdown is not possible).\n"
       ],
       "location": "St Petersburg City, Russia",
       "name": "Tradetech",

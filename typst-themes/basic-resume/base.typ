@@ -17,6 +17,8 @@
 }
 
 #let keywords = (
+  "RestAPI",
+  "WebSocket",
   "gRPC",
   "PostgreSQL",
   "Clickhouse",
