@@ -16,7 +16,7 @@
 }
 
 // Set data
-#let r = json("../../resume.json")
+#let r = json(sys.inputs.at("data", default: "../../resumes/en/resume.json"))
 #let lang = r.meta.language
 #let name = r.basics.name
 #let address = (r.basics.location.city, r.basics.location.region).filter(c => c != "").join(", ")

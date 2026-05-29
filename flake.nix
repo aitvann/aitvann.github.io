@@ -31,24 +31,34 @@
         # "${pkgs.garamond-libre}/share/opentype"
         "${pkgs.garamond-libre}/share/fonts/opentype"
       ];
-    in {
-      packages = {
-        builder = jsonresume-theme;
-        inherit (jsonresume-nix.packages.${system}) fmt-as-json;
 
-        default = pkgs.runCommand "build-jsonresume-and-typst" {} ''
-          ln -s ${./resume.json} resume.json
+      resume = lang:
+        pkgs.runCommand "build-jsonresume-and-typst" {} ''
+          ln -s ${./resumes/${lang}/resume.json} resume.json
           HOME=$(mktemp -d) ${lib.getExe self.packages.${system}.builder}
 
-          mkdir $out
-          cp -v resume.html $out/index.html
+          mkdir -p $out/${lang}
+          cp -v resume.html $out/${lang}/index.html
           # Copy other resources such as images here...
           cp -rv ${./resources} $out/resources
+          ln -s $out/resources $out/${lang}/resources
 
           # `ln` does not work because `typst` follows links
           cp -r ${./typst-themes} typst-themes
-          ${lib.getExe pkgs.typst} compile --root ./ ./typst-themes/${typst-theme}/resume.typ $out/Rust_Ivan_Aitzhanov.pdf
+          ${lib.getExe pkgs.typst} compile --root ./ --input data=../../resume.json ./typst-themes/${typst-theme}/resume.typ $out/${lang}/Rust_Ivan_Aitzhanov.pdf
         '';
+    in {
+      packages = rec {
+        builder = jsonresume-theme;
+        inherit (jsonresume-nix.packages.${system}) fmt-as-json;
+
+        resume-en = resume "en";
+        resume-ru = resume "ru";
+
+        default = pkgs.symlinkJoin {
+          name = "resume-all";
+          paths = [resume-en.out resume-ru.out];
+        };
       };
 
       # Allows to run a live preview server using "nix run .#jsonresume-live"
@@ -71,7 +81,8 @@
             TYPST_FONT_PATHS = fonts;
           };
           text = ''
-            ${lib.getExe pkgs.typst-live} ./typst-themes/${typst-theme}/resume.typ -- --root ./.
+            lang=$(basename "$(pwd)")
+            ${lib.getExe pkgs.typst-live} ../../typst-themes/${typst-theme}/resume.typ -- --root ../.. --input data=../../resumes/"$lang"/resume.json
           '';
         });
 
@@ -83,7 +94,8 @@
             TYPST_FONT_PATHS = fonts;
           };
           text = ''
-            ${lib.getExe pkgs.typst} compile --root ./. ./typst-themes/${typst-theme}/resume.typ ./resume.pdf
+            lang=$(basename "$(pwd)")
+            ${lib.getExe pkgs.typst} compile --root ../.. --input data=../../resumes/"$lang"/resume.json ../../typst-themes/${typst-theme}/resume.typ ./resume.pdf
           '';
         });
       };
