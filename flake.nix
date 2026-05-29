@@ -62,6 +62,7 @@
       };
 
       # Allows to run a live preview server using "nix run .#jsonresume-live"
+      # Choose language by `cd`-ing into `resumes/$lang` first
       apps = {
         jsonresume-live.type = "app";
         jsonresume-live.program = lib.getExe (jsonresume-nix.lib.${system}.buildLiveServer {

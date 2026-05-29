@@ -4,7 +4,9 @@ words = [
     "aitzhanov",
     "dsl",
     "hashi",
+    "jsonresume",
     "linkedin",
+    "okx",
     "poselok",
     "raydium",
     "rustenger",
@@ -13,5 +15,4 @@ words = [
     "wargaming",
     "ПУ",
     "СПб",
-    "OKX",
 ]
