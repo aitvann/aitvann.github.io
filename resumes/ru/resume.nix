@@ -4,13 +4,13 @@
   basics = {
     email = "aitvann@gmail.com";
     image = "../resources/avatar.jpg";
-    label = "Rust Developer";
+    label = "Разработчик на Rust";
     location = {
-      city = "St Petersburg";
+      city = "Санкт-Петербург";
       region = "";
       countryCode = "RU";
     };
-    name = "Ivan Aitzhanov";
+    name = "Иван Айтжанов";
     phone = "+7 (951) 659 83 10";
     profiles = [
       {
@@ -30,19 +30,18 @@
       }
     ];
     summary = ''
-      Пирвет! I am an experienced Rust developer and have professional C++ experience.
-      Seeking a remote systems programming role where strong systems knowledge, a
-      focus on memory safety, and performance optimization experience
-      contribute to building reliable and efficient software.
-      I am open-minded about using LLM (AI) to improve productivity.
+      Привет! Я опытный разработчик на Rust с профессиональным опытом в C++.
+      Ищу удалённую позицию в системном программировании, где фокус на безопасности памяти
+      и навыки оптимизации пригодятся в создании надёжного и эффективного ПО.
+      Открыт к использованию LLM (AI) для повышения производительности.
     '';
   };
   education = [
     {
       institution = "Институт среднего профессионального образования СПбПУ";
       url = "https://college.spbstu.ru";
-      area = "Information Technology";
-      studyType = "Bachelor";
+      area = "Информационные технологии";
+      studyType = "Бакалавр";
       startDate = "2018-09-01";
       endDate = "2022-05-01";
     }
@@ -55,113 +54,101 @@
     {
       name = "Tradetech";
       url = "https://www.linkedin.com/company/85363151";
-      location = "St Petersburg City, Russia";
+      location = "Санкт-Петербург, Россия";
       startDate = "2024-04";
       endDate = "2025-04";
       position = "Software Engineer";
       highlights = [
         ''
-          Async Rust with Tokio.
+          Асинхронный Rust с использованием Tokio.
         ''
         ''
-          Designed and built a scalable, distributed traffic limiting system
-          to enforce monthly and daily usage limits based on client subscription plans.
-          Utilizing PostgreSQL.
+          Разработал масштабируемую систему ограничения трафика, обеспечивающую
+          лимиты на использование по месячным и дневным планам подписки клиентов.
+          С помощью PostgreSQL.
         ''
         ''
-          Implemented an extensive integration with Paddle and Stripe payment gateways:
-          individual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,
-          Sqlx and PostgreSQL.
+          Реализовал интеграцию с платёжными шлюзами Paddle и Stripe:
+          индивидуальные покупки, обновления/снижения подписок с компенсацией.
+          С использованием Axum, Sqlx и PostgreSQL.
         ''
         ''
-          Developed a Solana blockchain slippage estimation service,
-          analyzing on-chain events from Pump.fun, Raydium, and other platforms.
-          Utilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.
+          Разработал сервис оценки проскальзывания для блокчейна Solana,
+          анализ событий с платформ Pump.fun, Raydium и других.
+          С использованием PostgreSQL, Sqlx, RabbitMQ и Google PubSub.
         ''
         ''
-          Mentored a junior engineer.
+          Осуществлял наставничество для младшего инженера.
         ''
       ];
     }
     {
       name = "Chi2";
-      location = "St Petersburg City, Russia";
+      location = "Санкт-Петербург, Россия";
       startDate = "2023-12";
       endDate = "2024-04";
-      position = "Software Engineer";
+      position = "Junior Software Engineer";
       highlights = [
         ''
-          Rust. Developed low-latency connectors to exchanges (OKX, ByBit)
-          utilizing RestAPI and WebSocket.
+          Rust. Разработка low-latency адаптеров к биржам (OKX, ByBit)
+          через RestAPI и WebSocket.
         ''
         ''
-          Implemented various latency-oriented TCP optimization techniques.
+          Реализация различных техник оптимизации задержeк TCP соединения.
         ''
       ];
     }
     {
       name = "Tradetech";
       url = "https://www.linkedin.com/company/85363151";
-      location = "St Petersburg City, Russia";
+      location = "Санкт-Петербург, Россия";
       startDate = "2021-10-31";
       endDate = "2023-10-31";
       position = "Junior Software Engineer";
       highlights = [
         ''
-          Async Rust with Tokio.
+          Асинхронный Rust с использованием Tokio.
         ''
         ''
-          Developed a service for monthly reporting (via email)
-          on exchange accounts activity to the regulatory authority.
-          Tracking metrics like trading volume, RPnL, and UPnL for selected period.
-          Sourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.
+          Разработал сервис ежемесячного отчёта (по электронной почте)
+          по активности счётов на бирже для регулятора.
+          Отслеживание метрик: объём торгов, RPnL, UPnL за выбранный период.
+          Источник данных — все части системы через gRPC, Clickhouse и Kafka.
         ''
         ''
-          Build a logging system: capture every user request+response
-          without an impact on the normal request flow. Utilizing Clickhouse.
+          Реализовал систему логирования: захват каждого запроса + ответа
+          без влияния на нормальный поток запросов.
+          С использованием Clickhouse.
         ''
         ''
-          Implemented leader service election utilizing HashiCorp Consul.
+          Реализовал механизм выбора ледирующего сервиса с использованием HashiCorp Consul.
         ''
         ''
-          Support for Solana payment gateway service ensuring data integrity
-          in cases of a power outage (when graceful shutdown is not possible).
+          Поддержка сервиса оплаты через блокчейн Solana.
+          Обеспечение целостности данных даже при сбоях питания
+          (когда graceful-shutdown невозможен).
         ''
-        # ''
-        #   Developed a CRUD service for various
-        #   utilizing Actix Web, Sqlx, PostgreSQL and Clickhouse.
-        # ''
       ];
     }
     {
       name = "Wargaming";
       url = "https://www.linkedin.com/company/127309";
-      location = "St Petersburg City, Russia";
+      location = "Санкт-Петербург, Россия";
       startDate = "2021-05-31";
       endDate = "2021-08-31";
       position = "Software Engineer Intern";
       highlights = [
-        "C++. 3D Model mesh optimization research."
-        "Python. Bug fixes."
+        "C++. Исследование возможностей оптимизации мешей 3D-моделей."
+        "Python. Исправление багов."
       ];
     }
   ];
   projects = [
-    # {
-    #   name = "Current Location";
-    #   url = "https://github.com/aitvann/current-location";
-    #   description = ''
-    #     A tool for sharing "current-working-file" between various programs
-    #     for better integration between them.
-    #   '';
-    #   startDate = "2025-10-25";
-    # }
     {
       name = "Smart Poselok";
       url = "https://github.com/aitvann/smart-poselok";
       description = ''
-        Management system of suburban settlements with
-        an extensive role-based access control system.
+        Система управления пригородными посёлками с системой управления доступом по ролям.
       '';
       startDate = "2022-04-30";
       endDate = "2022-06-30";
@@ -173,56 +160,46 @@
       name = "Rustenger";
       url = "https://github.com/aitvann/Rustenger";
       description = ''
-        Simple messenger using Rust and Tokio.
+        Простой мессенджер на Rust и Tokio.
       '';
       startDate = "2020-01-05";
       endDate = "2020-05-17";
     }
-    # {
-    #   name = "Visual DB";
-    #   url = "https://github.com/aitvann/VisualBD";
-    #   description = ''
-    #     PostgreSQL database GUI viewer
-    #   '';
-    #   keywords = [
-    #     "C#"
-    #   ];
-    # }
   ];
   skills = [
     {
-      name = "Programming Languages";
-      keywords = ["Rust (expert)" "C++" "Lua" "Clojure" "Nix"];
+      name = "Программные языки";
+      keywords = ["Rust (эксперт)" "C++" "Lua" "Clojure" "Nix"];
     }
     {
       name = "Soft Skills";
-      keywords = ["Technical mentoring" "Self-directed learning" "Agile" "Scrum"];
+      keywords = ["Наставничество" "Самообучение" "Agile" "Scrum"];
     }
     {
-      name = "Software Development";
-      keywords = ["Code Review" "TDD" "DDD"];
+      name = "Разработка";
+      keywords = ["Ревью кода" "TDD" "DDD"];
     }
     {
-      name = "Ops";
-      keywords = ["Linux" "HashiCorp Consul" "Nix (OS, PM, DSL)"];
+      name = "Операции (Ops)";
+      keywords = ["Linux" "HashiCorp Consul" "Nix (ОС, менеджер пакетов, DSL)"];
     }
   ];
   languages = [
     {
-      fluency = "Native Speaker";
-      language = "Russian";
+      fluency = "Носитель языка";
+      language = "Русский";
     }
     {
       fluency = "B2";
-      language = "English";
+      language = "Английский";
     }
   ];
   interests = [
     {
-      name = "FinTech";
+      name = "Финтех";
     }
     {
-      name = "Open Source";
+      name = "Открытое ПО";
     }
   ];
   meta = {
