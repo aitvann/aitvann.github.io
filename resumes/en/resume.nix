@@ -142,8 +142,8 @@
       endDate = "2021-08-31";
       position = "Software Engineer Intern";
       highlights = [
-        "C++. 3D Model mesh optimization research."
-        "Python. Bug fixes."
+        "C++. Research and implementation in the 3D model pipeline of `meshoptimizer` library."
+        "Python. Game GUI bug fixes."
       ];
     }
   ];

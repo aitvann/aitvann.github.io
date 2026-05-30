@@ -297,6 +297,7 @@
   if "highlights" in job and job.highlights != none {
     for highlight in job.highlights {
       show regex(keywords.join("|")): strong
+      show regex("meshoptimizer"): text => link("https://github.com/zeux/meshoptimizer", text)
       [- #block(width: 90%, to-content(highlight))]
     }
   }
