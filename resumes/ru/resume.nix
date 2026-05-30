@@ -60,7 +60,7 @@
       position = "Software Engineer";
       highlights = [
         ''
-          Асинхронный Rust с использованием Tokio.
+          Множество проектов на Rust с использованием Tokio.
         ''
         ''
           Разработал масштабируемую систему ограничения трафика, обеспечивающую
@@ -107,7 +107,7 @@
       position = "Junior Software Engineer";
       highlights = [
         ''
-          Асинхронный Rust с использованием Tokio.
+          Множество проектов на Rust с использованием Tokio.
         ''
         ''
           Разработал сервис ежемесячного отчёта (по электронной почте)
@@ -169,7 +169,7 @@
   ];
   skills = [
     {
-      name = "Программные языки";
+      name = "Языки программирования";
       keywords = ["Rust (эксперт)" "C++" "Lua" "Clojure" "Nix"];
     }
     {
@@ -181,7 +181,7 @@
       keywords = ["Ревью кода" "TDD" "DDD"];
     }
     {
-      name = "Операции (Ops)";
+      name = "Ops";
       keywords = ["Linux" "HashiCorp Consul" "Nix (ОС, менеджер пакетов, DSL)"];
     }
   ];

@@ -62,7 +62,7 @@
       position = "Software Engineer";
       highlights = [
         ''
-          Async Rust with Tokio.
+          Multiple projects using Rust with Tokio.
         ''
         ''
           Designed and built a scalable, distributed traffic limiting system
@@ -109,7 +109,7 @@
       position = "Junior Software Engineer";
       highlights = [
         ''
-          Async Rust with Tokio.
+          Multiple projects using Rust with Tokio.
         ''
         ''
           Developed a service for monthly reporting (via email)

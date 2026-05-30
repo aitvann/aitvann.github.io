@@ -128,7 +128,7 @@
     {
       "endDate": "2025-04",
       "highlights": [
-        "Async Rust with Tokio.\n",
+        "Multiple projects using Rust with Tokio.\n",
         "Designed and built a scalable, distributed traffic limiting system\nto enforce monthly and daily usage limits based on client subscription plans.\nUtilizing PostgreSQL.\n",
         "Implemented an extensive integration with Paddle and Stripe payment gateways:\nindividual purchases, subscription upgrades/downgrades with compensation. Utilizing Axum,\nSqlx and PostgreSQL.\n",
         "Developed a Solana blockchain slippage estimation service,\nanalyzing on-chain events from Pump.fun, Raydium, and other platforms.\nUtilizing PostgreSQL, Sqlx, RabbitMQ and Google PubSub.\n",
@@ -154,7 +154,7 @@
     {
       "endDate": "2023-10-31",
       "highlights": [
-        "Async Rust with Tokio.\n",
+        "Multiple projects using Rust with Tokio.\n",
         "Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
         "Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
         "Implemented leader service election utilizing HashiCorp Consul.\n",
