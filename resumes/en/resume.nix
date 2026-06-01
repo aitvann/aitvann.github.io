@@ -143,7 +143,7 @@
       position = "Software Engineer Intern";
       highlights = [
         "C++. Research and implementation in the 3D model pipeline of `meshoptimizer` library."
-        "Python. Game GUI bug fixes."
+        "Python. Game backend bug fixes."
       ];
     }
   ];
