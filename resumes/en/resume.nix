@@ -122,7 +122,7 @@
           without an impact on the normal request flow. Utilizing Clickhouse.
         ''
         ''
-          Implemented leader service election utilizing HashiCorp Consul.
+          Implemented leader service election (Hot Standby) utilizing HashiCorp Consul.
         ''
         ''
           Support for Solana payment gateway service ensuring data integrity

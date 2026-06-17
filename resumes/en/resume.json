@@ -157,7 +157,7 @@
         "Multiple projects using Rust with Tokio.\n",
         "Developed a service for monthly reporting (via email)\non exchange accounts activity to the regulatory authority.\nTracking metrics like trading volume, RPnL, and UPnL for selected period.\nSourcing data from all around the system utilizing gRPC, Clickhouse and Kafka.\n",
         "Build a logging system: capture every user request+response\nwithout an impact on the normal request flow. Utilizing Clickhouse.\n",
-        "Implemented leader service election utilizing HashiCorp Consul.\n",
+        "Implemented leader service election (Hot Standby) utilizing HashiCorp Consul.\n",
         "Support for Solana payment gateway service ensuring data integrity\nin cases of a power outage (when graceful shutdown is not possible).\n"
       ],
       "location": "St Petersburg City, Russia",
