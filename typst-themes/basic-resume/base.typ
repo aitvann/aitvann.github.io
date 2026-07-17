@@ -201,9 +201,9 @@
           contact-item(email, link-type: "mailto:"),
           contact-item(phone),
           contact-item(location),
-          contact-item(github, link-type: "https://"),
-          contact-item(linkedin, link-type: "https://"),
-          contact-item(personal-site, link-type: "https://"),
+          contact-item(github),
+          contact-item(linkedin),
+          contact-item(personal-site),
         )
         items.filter(x => x != none and x != "").map(x => box(x)).join(" | ")
       }

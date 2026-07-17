@@ -30,7 +30,7 @@
       }
     ];
     summary = ''
-      Hi! I am an experienced Rust developer and have professional C++ experience.
+      I am an experienced Rust developer and have professional C++ experience.
       Seeking a remote systems programming role where strong systems knowledge, a
       focus on memory safety, and performance optimization experience
       contribute to building reliable and efficient software.
